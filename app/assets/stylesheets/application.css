@@ -74,3 +74,72 @@ body {
   margin-bottom: 0;
   color: #777;
 }
+
+@media (max-width: 980px) {
+  body > .navbar-fixed-top .brand {
+    float: left;
+    margin-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .sidenav {
+    top: 0;
+    width: 118px;
+    margin-top: 30px;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  body {
+    padding-top: 0;
+  }
+
+  .sidenav {
+    width: 116px;
+  }
+
+  .sidenav.affix {
+    top: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-top: 0;
+  }
+
+  .sidenav {
+    width: auto;
+    margin-bottom: 20px;
+  }
+
+  .sidenav.affix {
+    position: static;
+    wdith: auto;
+    top: 0;
+  }
+
+  .footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .footer p {
+    margin-bottom: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 0;
+  }
+
+  .footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
