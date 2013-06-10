@@ -12,6 +12,7 @@
       <div class="container">
         <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">...</button>
         <a class="brand" href="/"><%= image_tag("logo_erau.png") %></a>
+        <a class="brand pull-right-force" href="http://students.sae.org/competitions/formulaseries/"><%= image_tag("logo_sae.png") %></a>
       </div>
     </div>
   </div>
@@ -36,7 +37,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; ERAU Motorsports 2013</p>
+      <p>&copy; ERAU Motorsports <%= Time.now.year %></p>
     </div>
   </footer>
 
