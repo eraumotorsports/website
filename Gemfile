@@ -31,7 +31,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'mercury-rails'
 gem 'ckeditor'
 
 # To use ActiveModel has_secure_password
