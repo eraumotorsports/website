@@ -34,6 +34,9 @@ GEM
       nokogiri (< 1.6.0)
       uuidtools (~> 2.1)
     builder (3.0.4)
+    ckeditor (4.0.4)
+      mime-types
+      orm_adapter
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.1)
@@ -72,6 +75,7 @@ GEM
     mime-types (1.23)
     multi_json (1.7.6)
     nokogiri (1.5.10)
+    orm_adapter (0.4.0)
     paperclip (3.4.2)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -147,6 +151,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk
+  ckeditor
   coffee-rails (~> 3.2.1)
   jquery-rails
   less-rails

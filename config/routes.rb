@@ -1,4 +1,6 @@
 EraumotorsportsCom::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+
   namespace :mercury do
     resources :images
   end
