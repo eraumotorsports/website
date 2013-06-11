@@ -13,4 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require ckeditor/init
 //= require_tree .
+
+function saveContent() {
+    console.log(CKEDITOR.instances);
+    var data = CKEDITOR.instances.content.getData();
+    var title = CKEDITOR.instances.title.getData();
+    console.log(data);
+
+    $.post(document.URL + "/ckupdate", { content: data, title: title }, "json");
+}
+

@@ -3,10 +3,10 @@ class PagesController < ApplicationController
     @page = Page.where(:permalink => params[:id]).first
   end
 
-  def mercury_update
+  def ckupdate
     page = Page.where(:permalink => params[:id]).first
-    page.title = params[:content][:title][:value]
-    page.content = params[:content][:content][:value]
+    page.content = params[:content]
+    page.title = params[:title]
     page.save!
     render text: ""
   end
