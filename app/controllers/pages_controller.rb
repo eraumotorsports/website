@@ -1,19 +1,13 @@
 class PagesController < ApplicationController
-  def index
+  def show
+    @page = Page.where(:permalink => params[:id]).first
   end
 
-  def competition
-  end
-
-  def team
-  end
-
-  def photos
-  end
-
-  def contact
-  end
-
-  def sponsors
+  def mercury_update
+    page = Page.where(:permalink => params[:id]).first
+    page.title = params[:content][:title][:value]
+    page.content = params[:content][:content][:value]
+    page.save!
+    render text: ""
   end
 end

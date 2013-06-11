@@ -1,10 +1,12 @@
 EraumotorsportsCom::Application.routes.draw do
-  match 'competition' => 'pages#competition', :as => :competition
-  match 'team' => 'pages#team', :as => :team
-  match 'photos' => 'pages#photos', :as => :photos
-  match 'contact' => 'pages#contact', :as => :contact
-  match 'sponsors' => 'pages#sponsors', :as => :sponsors
+  namespace :mercury do
+    resources :images
+  end
 
-  root :to => 'pages#index'
+  mount Mercury::Engine => '/'
 
+  root :to => 'pages#show', :id => "home"
+  resources :pages, :path => '' do
+    member { post :mercury_update }
+  end
 end
