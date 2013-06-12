@@ -1,11 +1,27 @@
 <div class="page-header">
-  <h1 id="title" contenteditable="true"><%= raw @page.title %></h1>
+  <% if is_admin? %>
+    <h1 id="title" contenteditable="true">
+  <% else %>
+    <h1 id="title">
+  <% end %>
+    <%= raw @page.title %>
+  </h1>
 </div>
 
 <div class="content">
-  <div id="content" contenteditable="true">
+  <% if is_admin? %>
+    <div id="content" contenteditable="true">
+  <% else %>
+    <div id="content">
+  <% end %>
     <%= raw @page.content %>
   </div>
 </div>
 
-<a id="save" href="#" onclick="saveContent();">Save</a>
+<% if is_admin? %>
+  <div>
+    <button class="btn btn-primary" onclick="saveContent();">
+      <i class="icon-ok icon-white"></i> Save Page
+    </button>
+  </div>
+<% end %>

@@ -3,16 +3,15 @@ class Ability
 
   def initialize(user)
     user ||= User.new # guest user (not logged in)
-    if user_signed_in?
+    if user.has_role? :admin
       can :manage, :all
-    end
-
-    if user_signed_in?
       can :access, :ckeditor
-
       can [:read, :create, :destroy], Ckeditor::Picture
       can [:read, :create, :destroy], Ckeditor::AttachmentFile
+    else
+      can :read, :all
     end
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

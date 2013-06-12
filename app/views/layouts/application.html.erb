@@ -24,11 +24,11 @@
       <div class="span3">
         <ul class="nav nav-list sidenav affix">
           <li class="<%= 'active' if current_page?("/") %>"><a href="/">Home</a></li>
-          <li class="<%= 'active' if current_page?("/competition") %>"><%= link_to "Competition", page_path(:id => "competition") %></li>
-          <li class="<%= 'active' if current_page?("/team") %>"><%= link_to "Team", page_path(:id => "team") %></li>
-          <li class="<%= 'active' if current_page?("/photos") %>"><%= link_to "Photos", page_path(:id => "photos") %></li>
-          <li class="<%= 'active' if current_page?("/contact") %>"><%= link_to "Contact", page_path(:id => "contact") %></li>
-          <li class="<%= 'active' if current_page?("/sponsors") %>"><%= link_to "Sponsors", page_path(:id => "sponsors") %></li>
+          <li class="<%= 'active' if current_page?("/pages/competition") %>"><%= link_to "Competition", page_path(:id => "competition") %></li>
+          <li class="<%= 'active' if current_page?("/pages/team") %>"><%= link_to "Team", page_path(:id => "team") %></li>
+          <li class="<%= 'active' if current_page?("/pages/photos") %>"><%= link_to "Photos", page_path(:id => "photos") %></li>
+          <li class="<%= 'active' if current_page?("/pages/contact") %>"><%= link_to "Contact", page_path(:id => "contact") %></li>
+          <li class="<%= 'active' if current_page?("/pages/sponsors") %>"><%= link_to "Sponsors", page_path(:id => "sponsors") %></li>
         </ul>
       </div><!--/span-->
       <div class="span9">
@@ -41,6 +41,9 @@
   <footer class="footer">
     <div class="container">
       <p>&copy; ERAU Motorsports <%= Time.now.year %></p>
+      <% if is_admin? %>
+        <p>You are admin</p>
+      <% end %>
     </div>
   </footer>
 

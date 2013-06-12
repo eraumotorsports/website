@@ -17,11 +17,14 @@
 //= require_tree .
 
 function saveContent() {
-    console.log(CKEDITOR.instances);
     var data = CKEDITOR.instances.content.getData();
     var title = CKEDITOR.instances.title.getData();
-    console.log(data);
 
-    $.post(document.URL + "/ckupdate", { content: data, title: title }, "json");
+    var url = document.URL;
+    if (url.indexOf("pages") <= 0) {
+        url = url + "pages/home";
+    }
+
+    $.post(url + "/ckupdate", { content: data, title: title }, "json");
 }
 
