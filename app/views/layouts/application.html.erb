@@ -44,6 +44,9 @@
       <% if is_admin? %>
         <p>You are admin</p>
       <% end %>
+      <% unless ENV["HEROKU_RELEASE_NAME"].nil? %>
+        <p>Platform Version: <%= ENV["HEROKU_RELEASE_NAME"] %></p>
+      <% end %>
     </div>
   </footer>
 
