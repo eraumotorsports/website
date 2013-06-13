@@ -504,7 +504,7 @@ function RefreshSize()
 						[
 							{
 								type:'html',
-								html:'<div id="' + pic_containerId + '" style="overflow:auto;width:500px;height:390px;position:relative;"></div>'
+								html:'<div id="' + pic_containerId + '" style="overflow:auto;height:390px;position:relative;"></div>'
 							}
 						]
 					}
