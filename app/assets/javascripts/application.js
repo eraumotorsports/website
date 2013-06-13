@@ -28,3 +28,7 @@ function saveContent() {
     $.post(url + "/ckupdate", { content: data, title: title }, "json");
 }
 
+$(document).ready(function() {
+    $('img[usemap]').rwdImageMaps();
+    console.log($('img[usemap]'));
+});
